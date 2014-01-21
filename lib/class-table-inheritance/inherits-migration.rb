@@ -25,7 +25,7 @@ module InheritsMigration
         
         field_option = {:primary_key => true, :null => false}
         field_option[:limit] = attr_column.limit if attr_column.limit                
-        table_defintion.column "#{column_to_create}_id", attr_column.type, field_option
+        table_defintion.column "#{column_to_create}_id", :primary_key, field_option
       end
       yield table_defintion  
     end 
